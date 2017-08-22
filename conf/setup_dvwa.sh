@@ -1,6 +1,7 @@
 #!/bin/bash
 
 chmod -R 777 /app/hackable/uploads /app/external/phpids/0.6/lib/IDS/tmp/phpids_log.txt && \
+cp /app/config/config.inc.php.dist /app/config/config.inc.php && \
 sed -i 's/allow_url_include = Off/allow_url_include = On/g' /etc/php5/apache2/php.ini && \
 sed -i "s/$_DVWA[ 'recaptcha_private_key' ] = ''/$_DVWA[ 'recaptcha_private_key' ] = 'TaQ185RFuWM'/g" /app/config/config.inc.php && \
 sed -i "s/$_DVWA[ 'recaptcha_public_key' ] = ''/$_DVWA[ 'recaptcha_public_key' ] = 'TaQ185RFuWM'/g" /app/config/config.inc.php && \
